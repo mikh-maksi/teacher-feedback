@@ -99,7 +99,7 @@ user_schema = UsersSchema()
 #         report_course = request.form["course"]
 #     return report_course
 
-@app.route('/get_report', methods=["GET", "POST"])
+@app.route('/get_report', methods=["GET"])
 def create_reports():
     course = 'course'
     grp = 'grp'
