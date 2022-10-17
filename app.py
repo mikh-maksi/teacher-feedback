@@ -10,6 +10,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import *
 from flask import request, jsonify
 
+
 # create the extension
 # db = SQLAlchemy()
 db = create_engine('postgresql+psycopg2://krgdfjhezazjek:b4d01edabab4b487a22a2694aa5f81f49d86c49b995f0ca498d356a0e7509dcf@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/dcagfpkbfapf9d')
@@ -92,12 +93,12 @@ reports_schema = ReportsSchema()
 user_schema = UsersSchema()
 
 
-# @app.route('/test_report', methods=["GET", "POST"])
-# def create_reports():
-#     report_course = 'some'
-#     if request.method == "GET":
-#         report_course = request.form["course"]
-#     return report_course
+@app.route('/test_report', methods=["GET", "POST"])
+def create_reports1():
+    report_course = 'some'
+    if request.method == "GET":
+        report_course = request.args.get('course')
+    return report_course
 
 @app.route('/get_report', methods=["GET"])
 def create_reports():
