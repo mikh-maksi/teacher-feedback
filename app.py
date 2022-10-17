@@ -93,7 +93,7 @@ reports_schema = ReportsSchema()
 user_schema = UsersSchema()
 
 
-@app.route('/test_report', methods=["GET", "POST"])
+@app.route('/test_report', methods=["GET"])
 def create_reports1():
     report_course = 'some'
     if request.method == "GET":
