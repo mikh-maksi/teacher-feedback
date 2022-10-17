@@ -114,17 +114,17 @@ def create_reports():
     additional_materials = 'additon'
     program_comments = 'comments'
     if request.method == "GET":
-        course = request.form["course"]
-        grp = request.form["grp"]
-        lesson_type = request.form["lesson_type"]
-        teacher = request.form["teacher"]
-        lesson_theme = request.form["lesson_theme"]
-        lesson_duration = request.form["lesson_duration"]
-        lesson_date = request.form["lesson_date"]
-        homework_number = request.form["homework_number"]
-        lesson_total = request.form["lesson_total"]
-        additional_materials = request.form["additional_materials"]
-        program_comments = request.form["program_comments"]
+        course = request.args.get('course')
+        grp = request.args.get('grp')
+        lesson_type = request.args.get('lesson_type')
+        teacher = request.args.get('teacher')
+        lesson_theme = request.args.get('lesson_theme')
+        lesson_duration = request.args.get('lesson_duration')
+        lesson_date = request.args.get('lesson_date')
+        homework_number = request.args.get('homework_number')
+        lesson_total = request.args.get('lesson_total')
+        additional_materials = request.args.get('additional_materials')
+        program_comments = request.args.get('program_comments')
 
         report = Reports( course=course , grp=grp,
                 lesson_type=lesson_type, teacher=teacher, lesson_theme=lesson_theme,lesson_duration=lesson_duration, lesson_date=lesson_date, homework_number=homework_number,  lesson_total=lesson_total, additional_materials=additional_materials, program_comments=program_comments)
