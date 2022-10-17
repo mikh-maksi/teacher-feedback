@@ -101,6 +101,17 @@ user_schema = UsersSchema()
 
 @app.route('/get_report', methods=["GET", "POST"])
 def create_reports():
+    course = 'course'
+    grp = 'grp'
+    lesson_type = 'type'
+    teacher = 'teacher'
+    lesson_theme = 'theme'
+    lesson_duration = 3
+    lesson_date = '2022-10-17'
+    homework_number = 8
+    lesson_total = 'total'
+    additional_materials = 'additon'
+    program_comments = 'comments'
     if request.method == "GET":
         course = request.form["course"]
         grp = request.form["grp"]
@@ -121,6 +132,7 @@ def create_reports():
         test = session.query(Reports).filter_by(course=course).first()
         data = reports_schema.dump(test)
         print(data)
+
     if request.method == "POST":
         course = request.form["course"]
         grp = request.form["grp"]
