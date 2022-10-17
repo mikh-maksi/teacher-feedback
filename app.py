@@ -91,6 +91,12 @@ class ReportsSchema(ma.Schema):
 reports_schema = ReportsSchema()
 user_schema = UsersSchema()
 
+
+@app.route('/test_report', methods=["GET", "POST"])
+def create_reports():
+    report_course = request.form["course"]
+    return report_course
+
 @app.route('/get_report', methods=["GET", "POST"])
 def create_reports():
     course = request.form["course"]
