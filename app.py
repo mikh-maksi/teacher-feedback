@@ -156,6 +156,10 @@ def create_reports():
         print(data)
     return jsonify(data=data, message=f'Report {report.id} successfully registered'), 202
 
+@app.route('/')
+def main_template():
+    return render_template('main.html',text = return_message)
+
 @app.route('/reports')
 def get_reports():
     reports_list = session.query(Reports).all()
