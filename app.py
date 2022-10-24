@@ -158,7 +158,7 @@ def create_reports():
 
 @app.route('/')
 def main_template():
-    return render_template('main.html',text = return_message)
+    return render_template('main.html')
 
 @app.route('/reports')
 def get_reports():
