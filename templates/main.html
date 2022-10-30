@@ -8,20 +8,21 @@
 </head>
 <body>
     <h1>Основні ендпоінти</h1>
-    <p>/get_report</p>
+    <p>/get_report GET</p>
     <ul>
-        <li>course</li>
-        <li>grp</li>
-        <li>lesson_type</li>
-        <li>teacher</li>
-        <li>lesson_theme</li>
-        <li>lesson_duration</li>
-        <li>lesson_date</li>
-        <li>homework_number</li>
-        <li>lesson_total</li>
-        <li>additional_materials</li>
-        <li>program_comments</li>
-        <li></li>
+        <li>course:str</li>
+        <li>grp:str</li>
+        <li>lesson_type:int</li>
+        <li>teacher:str</li>
+        <li>lesson_theme:str</li>
+        <li>lesson_duration:int</li>
+        <li>lesson_date:date</li>
+        <li>homework_number:int</li>
+        <li>lesson_total:str</li>
+        <li>additional_materials:str</li>
+        <li>program_comments:str</li>
     </ul>
+    <p><a href="https://goiteens-postgresql.herokuapp.com/tmpl" target = _blank>Form Example</a></p>
+    <p><a href="https://goiteens-postgresql.herokuapp.com/get_report?course=python&grp=Python01&lesson_type=1&teacher=Teacher+Name&lesson_theme=Lesson+name&lesson_duration=3&lesson_date=2022-10-17&homework_number=8&lesson_total=Total+Lesson&additional_materials=Additional+Materials&program_comments=Program+comments" target = _blank>Endpoint Example</a></p>
 </body>
 </html>
