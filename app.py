@@ -154,29 +154,74 @@ def create_reports_test():
 
 @app.route('/get_report', methods=["GET"])
 def create_reports():
-    course = 'course'
-    grp = 'grp'
-    lesson_type = 'type'
-    teacher = 'teacher'
-    lesson_theme = 'theme'
-    lesson_duration = 3
-    lesson_date = '2022-10-17'
-    homework_number = 8
-    lesson_total = 'total'
-    additional_materials = 'additon'
-    program_comments = 'comments'
+    # course = 'course'
+    # grp = 'grp'
+    # lesson_type = 'type'
+    # teacher = 'teacher'
+    # lesson_theme = 'theme'
+    # lesson_duration = 3
+    # lesson_date = '2022-10-17'
+    # homework_number = 8
+    # lesson_total = 'total'
+    # additional_materials = 'additon'
+    # program_comments = 'comments'
+
     if request.method == "GET":
-        course = request.args.get('course')
-        grp = request.args.get('grp')
-        lesson_type = request.args.get('lesson_type')
-        teacher = request.args.get('teacher')
-        lesson_theme = request.args.get('lesson_theme')
-        lesson_duration = request.args.get('lesson_duration')
-        lesson_date = request.args.get('lesson_date')
-        homework_number = request.args.get('homework_number')
-        lesson_total = request.args.get('lesson_total')
-        additional_materials = request.args.get('additional_materials')
-        program_comments = request.args.get('program_comments')
+        if request.args.get('course') == None:
+            course = ''
+        else:
+            course = request.args.get('course')
+        
+        if request.args.get('grp') == None:
+            grp = ''
+        else:
+            grp = request.args.get('grp')
+        
+        if request.args.get('lesson_type') == None:
+            lesson_type = 0
+        else:
+            lesson_type = request.args.get('lesson_type')
+
+        if request.args.get('teacher') == None:
+            teacher = ''
+        else:
+            teacher = request.args.get('teacher')
+
+        if request.args.get('lesson_theme') == None:
+            lesson_theme = ''
+        else:
+            lesson_theme = request.args.get('lesson_theme')
+
+        if request.args.get('lesson_duration') == None:
+            lesson_duration = 0
+        else:
+            lesson_duration = request.args.get('lesson_duration')
+        
+        if request.args.get('lesson_date') == None:
+            lesson_date = '2000-01-01'
+        else:
+            lesson_date = request.args.get('lesson_date')
+        
+        if request.args.get('homework_number') == None:
+            homework_number = 0
+        else:
+            homework_number = request.args.get('homework_number')
+        
+        if request.args.get('lesson_total') == None:
+            lesson_total = ''
+        else:
+            lesson_total = request.args.get('lesson_total')
+
+        if request.args.get('additional_materials') == None:
+            additional_materials = ''
+        else:
+            additional_materials = request.args.get('additional_materials')
+
+        if request.args.get('program_comments') == None:
+            program_comments = ''
+        else:
+            program_comments = request.args.get('program_comments')
+
 
         report = Reports( course=course , grp=grp,
                 lesson_type=lesson_type, teacher=teacher, lesson_theme=lesson_theme,lesson_duration=lesson_duration, lesson_date=lesson_date, homework_number=homework_number,  lesson_total=lesson_total, additional_materials=additional_materials, program_comments=program_comments)
