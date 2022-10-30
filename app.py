@@ -101,7 +101,7 @@ def create_reports1():
     return report_course
 
 @app.route('/get_report_test', methods=["GET"])
-def create_reports():
+def create_reports_test():
     course = 'course'
     grp = 'grp'
     lesson_type = 'type'
