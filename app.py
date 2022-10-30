@@ -110,7 +110,7 @@ def create_reports2():
         digits = 0
     else:
         digits = request.args.get('digits')
-    return_out = "text: "+text+" digits:"+digits
+    return_out = "text: "+str(text)+" digits:"+str(digits)
     return return_out
     
     
