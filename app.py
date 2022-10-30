@@ -104,7 +104,7 @@ def create_reports1():
 def create_reports_test():
     course = 'course'
     grp = 'grp'
-    lesson_type = 'type'
+    lesson_type = 1
     teacher = 'teacher'
     lesson_theme = 'theme'
     lesson_duration = 3
