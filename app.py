@@ -100,6 +100,20 @@ def create_reports1():
         report_course = request.args.get('course')
     return report_course
 
+@app.route('/get_parameters_test', methods=["GET"])
+def create_reports2():
+    if request.args.get('text') == None:
+        text = ''
+    else:
+        text = request.args.get('text')
+    if request.args.get('digits') == None:
+        digits = 0
+    else:
+        digits = request.args.get('digits')
+    return_out = "text: "+text+" digits:"+digits
+    return return_out
+    
+    
 @app.route('/get_report_test', methods=["GET"])
 def create_reports_test():
     course = 'course'
