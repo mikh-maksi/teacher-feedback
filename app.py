@@ -232,25 +232,26 @@ def create_reports():
         print(data)
 
     if request.method == "POST":
-        course = request.form["course"]
-        grp = request.form["grp"]
-        lesson_type = request.form["lesson_type"]
-        teacher = request.form["teacher"]
-        lesson_theme = request.form["lesson_theme"]
-        lesson_duration = request.form["lesson_duration"]
-        lesson_date = request.form["lesson_date"]
-        homework_number = request.form["homework_number"]
-        lesson_total = request.form["lesson_total"]
-        additional_materials = request.form["additional_materials"]
-        program_comments = request.form["program_comments"]
+        print("POST")
+        # course = request.form["course"]
+        # grp = request.form["grp"]
+        # lesson_type = request.form["lesson_type"]
+        # teacher = request.form["teacher"]
+        # lesson_theme = request.form["lesson_theme"]
+        # lesson_duration = request.form["lesson_duration"]
+        # lesson_date = request.form["lesson_date"]
+        # homework_number = request.form["homework_number"]
+        # lesson_total = request.form["lesson_total"]
+        # additional_materials = request.form["additional_materials"]
+        # program_comments = request.form["program_comments"]
 
-        report = Reports( course=course , grp=grp,
-                lesson_type=lesson_type, teacher=teacher, lesson_theme=lesson_theme,lesson_duration=lesson_duration, lesson_date=lesson_date, homework_number=homework_number,  lesson_total=lesson_total, additional_materials=additional_materials, program_comments=program_comments)
-        session.add(report)
-        session.commit()
-        test = session.query(Reports).filter_by(course=course).first()
-        data = reports_schema.dump(test)
-        print(data)
+        # report = Reports( course=course , grp=grp,
+        #         lesson_type=lesson_type, teacher=teacher, lesson_theme=lesson_theme,lesson_duration=lesson_duration, lesson_date=lesson_date, homework_number=homework_number,  lesson_total=lesson_total, additional_materials=additional_materials, program_comments=program_comments)
+        # session.add(report)
+        # session.commit()
+        # test = session.query(Reports).filter_by(course=course).first()
+        # data = reports_schema.dump(test)
+        # print(data)
     return jsonify(data=data, message=f'Report {report.id} successfully registered'), 202
 
 @app.route('/')
