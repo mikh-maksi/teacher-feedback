@@ -252,6 +252,7 @@ def create_reports():
         # test = session.query(Reports).filter_by(course=course).first()
         # data = reports_schema.dump(test)
         # print(data)
+        return "Post ok"
     return jsonify(data=data, message=f'Report {report.id} successfully registered'), 202
 
 @app.route('/')
