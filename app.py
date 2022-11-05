@@ -233,7 +233,8 @@ def create_reports():
 
     if request.method == "POST":
         print("POST")
-        # course = request.form["course"]
+        course = request.form["course"]
+        print(course)
         # grp = request.form["grp"]
         # lesson_type = request.form["lesson_type"]
         # teacher = request.form["teacher"]
