@@ -152,7 +152,7 @@ def create_reports_test():
     return jsonify(data=data, message=f'Report {report.id} successfully registered'), 202
 
 
-@app.route('/get_report', methods=["GET"])
+@app.route('/get_report', methods=["GET","POST"])
 def create_reports():
     # course = 'course'
     # grp = 'grp'
