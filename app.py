@@ -238,11 +238,12 @@ def create_reports():
             print(course)
         except:
             print('request')
+        
         try:
-            course = request.args.get('course')
-            print(course)
+            grp = request.form('grp')
+            print(grp)
         except:
-            print('get')
+            print('grp')
         try:
             course = request.args('course')
             print(course)
