@@ -246,56 +246,56 @@ def create_reports():
             grp = ''
 
         try:
-            lesson_type = request.args('lesson_type')
+            lesson_type = request.form["lesson_type"]
             print(lesson_type)
         except:
             lesson_type = 0
 
 
         try:
-            teacher = request.args('teacher')
+            teacher = request.form["teacher"]
             print(teacher)
         except:
             teacher = ''
 
         try:
-            lesson_theme = request.args('lesson_theme')
+            lesson_theme = request.form["lesson_theme"]
             print(lesson_theme)
         except:
             lesson_theme = ''
 
         try:
-            lesson_duration = request.args('lesson_duration')
+            lesson_duration = request.form["lesson_duration"]
             print(lesson_duration)
         except:
             lesson_duration = 0
 
         try:
-            lesson_date = request.args('lesson_date')
+            lesson_date = request.form["lesson_date"]
             print(lesson_date)
         except:
             lesson_date = '2000-01-01'
 
         try:
-            homework_number = request.args('homework_number')
+            homework_number = request.form["homework_number"]
             print(homework_number)
         except:
             homework_number = 0
 
         try:
-            lesson_total = request.args('lesson_total')
+            lesson_total = request.form["lesson_total"]
             print(lesson_total)
         except:
             lesson_total = ''
 
         try:
-            additional_materials = request.args('additional_materials')
+            additional_materials = request.form["additional_materials"]
             print(additional_materials)
         except:
             additional_materials = ''
 
         try:
-            program_comments = request.args('program_comments')
+            program_comments = request.form["program_comments"]
             print(program_comments)
         except:
             program_comments = ''
