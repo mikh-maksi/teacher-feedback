@@ -243,6 +243,11 @@ def create_reports():
             print(course)
         except:
             print('get')
+        try:
+            course = request.args('course')
+            print(course)
+        except:
+            print('args')
         # if request.form["course"] == None:
         #     print("None")
         # else:
