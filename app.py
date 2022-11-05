@@ -237,19 +237,78 @@ def create_reports():
             course = request.form["course"]
             print(course)
         except:
-            print('request')
+            course = ''
         
         try:
             grp = request.form["grp"]
             print(grp)
         except:
-            print('grp')
+            grp = ''
 
         try:
-            course = request.args('course')
-            print(course)
+            lesson_type = request.args('lesson_type')
+            print(lesson_type)
         except:
-            print('args')
+            lesson_type = 0
+
+
+        try:
+            teacher = request.args('teacher')
+            print(teacher)
+        except:
+            teacher = ''
+
+        try:
+            lesson_theme = request.args('lesson_theme')
+            print(lesson_theme)
+        except:
+            lesson_theme = ''
+
+        try:
+            lesson_duration = request.args('lesson_duration')
+            print(lesson_duration)
+        except:
+            lesson_duration = 0
+
+        try:
+            lesson_date = request.args('lesson_date')
+            print(lesson_date)
+        except:
+            lesson_date = '2000-01-01'
+
+        try:
+            homework_number = request.args('homework_number')
+            print(homework_number)
+        except:
+            homework_number = 0
+
+        try:
+            lesson_total = request.args('lesson_total')
+            print(lesson_total)
+        except:
+            lesson_total = ''
+
+        try:
+            additional_materials = request.args('additional_materials')
+            print(additional_materials)
+        except:
+            additional_materials = ''
+
+        try:
+            program_comments = request.args('program_comments')
+            print(program_comments)
+        except:
+            program_comments = ''
+
+
+        report = Reports( course=course , grp=grp,
+                lesson_type=lesson_type, teacher=teacher, lesson_theme=lesson_theme,lesson_duration=lesson_duration, lesson_date=lesson_date, homework_number=homework_number,  lesson_total=lesson_total, additional_materials=additional_materials, program_comments=program_comments)
+        session.add(report)
+        session.commit()
+        test = session.query(Reports).filter_by(course=course).first()
+        data = reports_schema.dump(test)
+        print(data)
+
         # if request.form["course"] == None:
         #     print("None")
         # else:
@@ -274,7 +333,7 @@ def create_reports():
         # test = session.query(Reports).filter_by(course=course).first()
         # data = reports_schema.dump(test)
         # print(data)
-        return "Post ok"
+        
     return jsonify(data=data, message=f'Report {report.id} successfully registered'), 202
 
 @app.route('/')
