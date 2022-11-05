@@ -240,10 +240,11 @@ def create_reports():
             print('request')
         
         try:
-            grp = request.form('grp')
+            grp = request.form["grp"]
             print(grp)
         except:
             print('grp')
+
         try:
             course = request.args('course')
             print(course)
